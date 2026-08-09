@@ -1,0 +1,293 @@
+@import "./variables.css";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.rooms-page {
+    min-height: 100vh;
+
+    background-color: var(--color-background);
+
+    color: var(--color-text-primary);
+
+    font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.rooms-header {
+    width: 100%;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 48px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid var(--color-border);
+
+    background-color: var(--color-surface);
+}
+
+.rooms-logo {
+    color: var(--color-text-primary);
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.rooms-user {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 14px;
+}
+
+.rooms-user a {
+    color: var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.rooms-user a:hover {
+    color: var(--color-primary-hover);
+}
+
+.rooms-user button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--color-primary);
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.rooms-user button:hover {
+    color: var(--color-primary-hover);
+}
+/* =========================
+   CONTENT
+========================= */
+
+.rooms-content {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 64px 32px 80px;
+
+    box-sizing: border-box;
+}
+
+.rooms-title {
+    margin-bottom: 40px;
+}
+
+.rooms-title h1 {
+    margin: 0 0 10px;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: var(--color-text-primary);
+}
+
+.rooms-title p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =========================
+   ROOMS GRID
+========================= */
+
+.rooms-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.room-card {
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.room-card:hover {
+    border-color: var(--color-primary);
+
+    background-color: #252533;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ROOM NUMBER
+========================= */
+
+.room-number {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: rgba(30, 215, 96, 0.12);
+
+    color: var(--color-primary);
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   ROOM INFO
+========================= */
+
+.room-info {
+    flex: 1;
+}
+
+.room-info h2 {
+    margin: 0 0 6px;
+
+    color: var(--color-text-primary);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.room-info span {
+    color: var(--color-text-secondary);
+
+    font-size: 13px;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.room-arrow {
+    color: var(--color-text-secondary);
+
+    font-size: 22px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.room-card:hover .room-arrow {
+    color: var(--color-primary);
+
+    transform: translateX(4px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .rooms-header {
+        padding: 0 24px;
+    }
+
+    .rooms-content {
+        padding: 48px 24px 64px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .rooms-header {
+        min-height: 64px;
+
+        padding: 0 16px;
+    }
+
+    .rooms-logo {
+        font-size: 19px;
+    }
+
+    .rooms-user span {
+        display: none;
+    }
+
+    .rooms-content {
+        padding: 40px 16px 56px;
+    }
+
+    .rooms-title h1 {
+        font-size: 27px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
