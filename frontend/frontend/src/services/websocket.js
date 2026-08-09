@@ -1,4 +1,4 @@
-const WS_URL = "ws://localhost:8080";
+const WS_URL = import.meta.env.VITE_WS_URL;
 
 let socket = null;
 
@@ -118,9 +118,6 @@ export function sendMessage(message) {
 }
 
 
-/**
- * Envia o indicador de que o usuário está digitando.
- */
 export function sendTyping() {
 
     if (!socket) {
@@ -140,9 +137,6 @@ export function sendTyping() {
 }
 
 
-/**
- * Fecha a conexão WebSocket.
- */
 export function disconnectWebSocket() {
 
     if (!socket) {
@@ -163,9 +157,6 @@ export function disconnectWebSocket() {
 }
 
 
-/**
- * Verifica se existe uma conexão WebSocket aberta.
- */
 export function isWebSocketConnected() {
 
     return (
